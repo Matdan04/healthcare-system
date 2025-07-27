@@ -12,7 +12,7 @@ export async function updateUserProfile(userId: string, data: any) {
   requirePermission(session.user.role, 'user.update');
   
   // Ensure user can only update their own profile or has admin access
-  if (session.user.id !== userId && session.user.role !== 'admin') {
+  if (session.user.id.toString() !== userId && session.user.role !== 'admin') {
     throw new Error('Forbidden');
   }
 

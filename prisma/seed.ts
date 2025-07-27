@@ -11,7 +11,6 @@ async function main() {
     where: { email: 'admin@generalhospital.com' },
     update: {},
     create: {
-      id: 'clinic-1',
       name: 'General Hospital',
       email: 'admin@generalhospital.com',
       phone: '+1-555-0100',
@@ -24,7 +23,6 @@ async function main() {
     where: { email: 'info@citymedical.com' },
     update: {},
     create: {
-      id: 'clinic-2',
       name: 'City Medical Center',
       email: 'info@citymedical.com',
       phone: '+1-555-0200',
@@ -40,7 +38,6 @@ async function main() {
     where: { email: 'admin@generalhospital.com' },
     update: {},
     create: {
-      id: 'admin-1',
       email: 'admin@generalhospital.com',
       passwordHash,
       firstName: 'System',
@@ -56,7 +53,6 @@ async function main() {
     where: { email: 'dr.smith@generalhospital.com' },
     update: {},
     create: {
-      id: 'doctor-1',
       email: 'dr.smith@generalhospital.com',
       passwordHash: await bcrypt.hash('Doctor123!', 12),
       firstName: 'John',
@@ -74,7 +70,6 @@ async function main() {
     where: { email: 'nurse.johnson@generalhospital.com' },
     update: {},
     create: {
-      id: 'nurse-1',
       email: 'nurse.johnson@generalhospital.com',
       passwordHash: await bcrypt.hash('Nurse123!', 12),
       firstName: 'Sarah',
@@ -91,7 +86,6 @@ async function main() {
     where: { email: 'patient@example.com' },
     update: {},
     create: {
-      id: 'patient-1',
       email: 'patient@example.com',
       passwordHash: await bcrypt.hash('Patient123!', 12),
       firstName: 'Michael',

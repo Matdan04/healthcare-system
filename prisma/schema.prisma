@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Clinic {
-  id               String   @id @default(uuid())
+  id               Int   @id @default(autoincrement())
   name             String
   email            String   @unique
   phone            String?
@@ -28,8 +28,8 @@ model Clinic {
 }
 
 model User {
-  id              String    @id @default(uuid())
-  clinicId        String    @map("clinic_id")
+  id              Int    @id @default(autoincrement())
+  clinicId        Int    @map("clinic_id")
   email           String    @unique
   passwordHash    String    @map("password_hash")
   firstName       String    @map("first_name")
@@ -59,7 +59,7 @@ model User {
 
 model RefreshToken {
   id        String   @id @default(uuid())
-  userId    String   @map("user_id")
+  userId    Int   @map("user_id")
   tokenHash String   @map("token_hash")
   expiresAt DateTime @map("expires_at")
   createdAt DateTime @default(now()) @map("created_at")
@@ -76,7 +76,7 @@ model RefreshToken {
 
 model UserSession {
   id        String    @id @default(uuid())
-  userId    String    @map("user_id")
+  userId    Int    @map("user_id")
   ipAddress String?   @map("ip_address") @db.VarChar(45)
   userAgent String?   @map("user_agent") @db.Text
   loginAt   DateTime  @default(now()) @map("login_at")
